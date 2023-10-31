@@ -43,8 +43,6 @@ describe('Pruebas en fileUpload', () => {
         // en este caso toca separar por un arreglo con el metodo split por cada "/"
         
         const segements = url.split("/")
-
-        console.log(segements)
         
         // aca mandamos estos segmentos y le decimos que de todos con el length - 1 osea el ultimo en este caso
         // va a remplazar con el metodo replace el ".jpg" por un string vacio
