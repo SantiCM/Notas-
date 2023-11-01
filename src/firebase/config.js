@@ -59,8 +59,6 @@ const firebaseConfig = {
 
 };
 
-console.log(firebaseConfig)
-
 // Initialize Firebase
 export const FireBaseApp  = initializeApp(firebaseConfig);
 

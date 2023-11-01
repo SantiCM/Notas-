@@ -47,10 +47,10 @@ export const LoginPage = () => {
     const onGoogleSingIn = (event) => {
 
         // el evento que va a ser prevenido por defautl
-        event.preventDefault()
+        //event.preventDefault()
         
-        // dispatch de entrar con google recibiendo el email y password
-        dispatch(chekingGoggle({email, password}))
+        // dispatch de entrar con google 
+        dispatch(chekingGoggle())
     
     }
 
@@ -59,7 +59,7 @@ export const LoginPage = () => {
     <AuthLayout title="Login">
 
         {/* En el form recibimos las animaciones y la propiedad onSubmit que recibe el onsunmit*/}
-        <form className="animate__animated animate__fadeIn animate__faster" onSubmit={onSubmit}>
+        <form aria-label="submitForm" className="animate__animated animate__fadeIn animate__faster" onSubmit={onSubmit}>
        
             <Grid container>
        
@@ -89,6 +89,11 @@ export const LoginPage = () => {
                         placeholder="Ingresa tu contraseña"
                         fullWidth
                         name="password"
+                        inputProps={{
+                        
+                            "data-testid" : "password"
+                        
+                        }}
                         value={password}
                         onChange={onInputChanhge}
                     >   
@@ -124,7 +129,7 @@ export const LoginPage = () => {
 
                         {/*Este buton es el login el cual esta con la propiedad isAuthenticated que hace el cambio al cheking*/}
                         
-                        <Button disabled={isAuthenticated} onClick={onGoogleSingIn} variant="contained" fullWidth>
+                        <Button disabled={isAuthenticated} onClick={onGoogleSingIn} variant="contained" fullWidth aria-label="google-btn">
                        
                             <Google></Google>
 
